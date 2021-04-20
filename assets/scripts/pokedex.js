@@ -1,6 +1,14 @@
+// TODO: make the first letter of the string to be uppercase
+// * Author: Ivan Christian Jay Funcion
 function capitalizeFirstLetter(string) {
 	return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+/**
+ * TODO: load all move sets of a specific pokemon
+ * @param: loadMoveSets(id) pokemon id
+ * * Author: Ivan Christian Jay Funcion
+ */
 
 function loadMoveSets(id) {
 	$.get(
@@ -28,6 +36,12 @@ function loadMoveSets(id) {
 		"json"
 	);
 }
+
+/**
+ * TODO: load all base stats of a specific pokemon
+ * @param: loadBaseStats(id) pokemon id
+ * * Author: Ivan Christian Jay Funcion
+ */
 
 function loadBaseStats(id) {
 	$.get(
@@ -62,6 +76,12 @@ function loadBaseStats(id) {
 	);
 }
 
+/**
+ * TODO: load all species specification of a specific pokemon
+ * @param: loadSpeciesSpecification(id) pokemon id
+ * * Author: Ivan Christian Jay Funcion
+ */
+
 function loadSpeciesSpecification(id) {
 	$.get(
 		`https://pokeapi.co/api/v2/pokemon-species/${id}`,
@@ -77,6 +97,12 @@ function loadSpeciesSpecification(id) {
 		"json"
 	);
 }
+
+/**
+ * TODO: load details (including:image,name,id height, weight) of pokemon when a specific pokemon is clicked in the pokemon list
+ * @param: none
+ * * Author: Ivan Christian Jay Funcion
+ */
 
 function loadOnePokemon() {
 	$("img.pokemon").click(function () {
@@ -114,6 +140,12 @@ function loadOnePokemon() {
 		$(".pokedex").show();
 	});
 }
+
+/**
+ * TODO: load all pokemon to the DOM
+ * @param: none
+ * * Author: Ivan Christian Jay Funcion
+ */
 
 function loadAllPokemon() {
 	let html = "";
