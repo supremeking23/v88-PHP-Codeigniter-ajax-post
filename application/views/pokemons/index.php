@@ -48,14 +48,12 @@
 <nav class="navbar navbar-light mb-5">
   <!-- <span class="navbar-brand mb-0 h1">Navbar</span> -->
   <div class="container">
-    <img src="https://supremeking23.github.io/pokemon-lite-js/assets/images/pokemonlite.png" class="navbar-brand mb-0 h1 img-fluid logo" alt="">
+    <img src="https://www.pinclipart.com/picdir/big/379-3791327_pokemon-cliparts.png" class="navbar-brand mb-0 h1 img-fluid logo" alt="">
   </div>
 </nav>
 
     <div class="container-fluid">
-        <div class="row pokemons pl-3">
-           
-        </div>
+        <div class="row pokemons pl-3"></div>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
