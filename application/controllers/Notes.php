@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 date_default_timezone_set('Asia/Manila');
-class Times extends CI_Controller {
+class Notes extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,13 +21,35 @@ class Times extends CI_Controller {
 
     
 
-	public function main()
-	{	
-        $current_date  = date_create();
-        $format_date = date_format($current_date,"F dS, Y"); 
-        $format_time = date_format($current_date,"h:i:s a"); 
-        $data = array("current_date"=> $format_date, "current_time" => $format_time);
-		$this->load->view('Time Display/time',$data);
+	public function index(){	
+       
+		$this->load->view('posts/index');
 	}
+
+	public function index_json(){
+		$data["notes"] = $this->note->get_all_notes();
+		echo json_encode($data);
+	}
+
+	public function index_html(){
+	  $data["notes"] = $this->note->get_all_notes();
+	  $this->load->view("posts/includes/notes", $data);
+	}
+
+	public function create(){
+		echo "bulaga";
+
+		$note_details = array(
+			"description" => $this->input->post("note"),
+		);
+
+		$add_note = $this->note->add_note($note_details);
+
+		if($add_note === TRUE){
+			redirect(base_url());
+		}
+	}
+
+   
 
 }
